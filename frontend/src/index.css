@@ -1,0 +1,55 @@
+:root{
+  --bg: #f6f7fb;
+  --card: #ffffff;
+  --text: #0f172a;
+  --muted: #64748b;
+  --border: rgba(15,23,42,.12);
+  --primary: #6366f1;
+  --danger: #ef4444;
+  --success: #22c55e;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*{ box-sizing: border-box; }
+body{ margin:0; background: var(--bg); }
+
+#root{ min-height: 100vh; }
+
+input, select, textarea, button{ font: inherit; }
+
+.card{
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+}
+.grid{ display:grid; gap: 12px; }
+.row{ display:flex; gap: 10px; align-items:center; flex-wrap: wrap; }
+.muted{ color: var(--muted); }
+
+.field{ display:flex; flex-direction: column; gap: 6px; }
+.field label{ font-size: 12px; color: var(--muted); }
+.field input, .field select, .field textarea{
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: #fff;
+  outline: none;
+}
+.field input:focus, .field select:focus, .field textarea:focus{
+  border-color: rgba(99,102,241,.55);
+  box-shadow: 0 0 0 4px rgba(99,102,241,.10);
+}
+
+.table{ width:100%; border-collapse: collapse; }
+.table th, .table td{
+  padding: 10px 10px;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+  font-size: 13px;
+}
+.table th{ color: var(--muted); font-weight: 600; }
