@@ -2,6 +2,7 @@ import { Router } from "express";
 import { body } from "express-validator";
 
 import { register, login, me } from "../controllers/auth.controller.js";
+import { googleAuth } from "../controllers/googleAuth.controller.js";
 import { validate } from "../middleware/validate.js";
 import { protect } from "../middleware/auth.js";
 
@@ -26,6 +27,12 @@ router.post(
     validate,
   ],
   login
+);
+
+router.post(
+  "/google",
+  [body("credential").isString().isLength({ min: 20, max: 12000 }), validate],
+  googleAuth
 );
 
 router.get("/me", protect, me);

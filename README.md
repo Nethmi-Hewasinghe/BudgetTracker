@@ -25,7 +25,7 @@ cp .env.example .env
 npm run dev
 ```
 
-API runs on `http://localhost:5000` and exposes routes under `/api/*`.
+API runs on `http://localhost:5001` and exposes routes under `/api/*`.
 
 ### 2) Frontend
 

@@ -4,22 +4,7 @@ import { Category } from "../models/Category.js";
 import { AppError } from "../utils/AppError.js";
 import { asyncHandler } from "../utils/asyncHandler.js";
 import { signAccessToken } from "../services/token.service.js";
-
-const DEFAULT_CATEGORIES = [
-  // Expense categories
-  { name: "Food & Dining", type: "Expense", color: "#ef4444" },
-  { name: "Transportation", type: "Expense", color: "#f97316" },
-  { name: "Shopping", type: "Expense", color: "#ec4899" },
-  { name: "Entertainment", type: "Expense", color: "#8b5cf6" },
-  { name: "Utilities", type: "Expense", color: "#3b82f6" },
-  { name: "Healthcare", type: "Expense", color: "#06b6d4" },
-  { name: "Other", type: "Expense", color: "#6b7280" },
-  // Income categories
-  { name: "Salary", type: "Income", color: "#10b981" },
-  { name: "Freelance", type: "Income", color: "#14b8a6" },
-  { name: "Investment", type: "Income", color: "#f59e0b" },
-  { name: "Other", type: "Income", color: "#6b7280" },
-];
+import { DEFAULT_CATEGORIES } from "../config/defaultCategories.js";
 
 export const register = asyncHandler(async (req, res) => {
   const { name, email, password } = req.body;
@@ -47,6 +32,10 @@ export const login = asyncHandler(async (req, res) => {
 
   const user = await User.findOne({ email }).select("+passwordHash");
   if (!user) throw new AppError("Invalid email or password", 401);
+
+  if (!user.passwordHash) {
+    throw new AppError("This account uses Google sign-in. Use Continue with Google.", 401);
+  }
 
   const ok = await bcrypt.compare(password, user.passwordHash);
   if (!ok) throw new AppError("Invalid email or password", 401);
