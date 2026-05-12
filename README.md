@@ -478,10 +478,10 @@ Each user’s transactions, categories, and budgets are stored separately using 
 
 ## Submission Links
 
-- GitHub Repository: `Add your repository link here`
-- ER Diagram: `Add your diagram link here`
+- GitHub Repository: `https://github.com/Nethmi-Hewasinghe/BudgetTracker.git`
+- ER Diagram: `https://drive.google.com/file/d/1tEzR9hFwJrDZ9pmsZvfZukp_cwXWgMTe/view?usp=sharing`
 - Presentation: `Add your presentation link here`
-- Demo Video: `Add your video link here`
+- Demo Video: `https://drive.google.com/file/d/1hwRdSbsKnMrdoU2mY7g1bI0FJHdbv4Sm/view?usp=sharing`
 
 ---
 
