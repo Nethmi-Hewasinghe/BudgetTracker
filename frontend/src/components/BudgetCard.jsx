@@ -1,7 +1,3 @@
-
-
-
-
 import { formatLKR } from "../utils/formatMoney.js";
 import { Trash2Icon, PencilIcon, AlertTriangleIcon, CheckCircleIcon } from "lucide-react";
 

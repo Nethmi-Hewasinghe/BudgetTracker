@@ -1,9 +1,4 @@
-/* =========================================================
-   Ledgerly — Auth styles (Personal Finance & Budget Tracker)
-   Drop-in replacement for the old auth.css.
-   Keeps the same class names used in RegisterPage / LoginPage
-   so no JSX changes are required.
-   ========================================================= */
+
 
 :root {
   --primary: #059669;        /* emerald-600 */
@@ -197,7 +192,7 @@
   font-size: 13px;
   line-height: 1.4;
 }
-/* ---------- Optional brand row (use if you add a logo above title) ---------- */
+
 .authBrand {
   display: flex;
   align-items: center;

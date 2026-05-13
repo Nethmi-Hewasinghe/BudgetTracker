@@ -1,5 +1,3 @@
-/** Sri Lankan Rupee (LKR) formatting for display only — amounts are still stored as numbers. */
-
 const lkr = new Intl.NumberFormat("en-LK", {
   style: "currency",
   currency: "LKR",
@@ -23,7 +21,7 @@ export function formatLKRCompact(value) {
   return lkrCompact.format(Number(value) || 0);
 }
 
-/** Prefix +/− for transaction-style rows (amounts are stored positive). */
+
 export function formatSignedLKR(amount, type) {
   const abs = Math.abs(Number(amount) || 0);
   const formatted = formatLKR(abs);
